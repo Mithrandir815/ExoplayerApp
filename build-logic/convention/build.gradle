@@ -1,0 +1,57 @@
+plugins {
+    `kotlin-dsl`
+}
+
+group = "xxx"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation(libs.android.gradlePlugin)
+    implementation(libs.kotlin.gradlePlugin)
+}
+
+gradlePlugin {
+    plugins {
+        // 作成する独自Plugin(後述)を記述していく
+        register("androidApplicationCompose") {
+            id = "exoplayerapp.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("androidApplication") {
+            id = "exoplayerapp.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = "exoplayerapp.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "exoplayerapp.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidFeature") {
+            id = "exoplayerapp.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
+        register("androidTest") {
+            id = "exoplayerapp.android.test"
+            implementationClass = "AndroidTestConventionPlugin"
+        }
+        register("androidHilt") {
+            id = "exoplayerapp.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
+        register("androidFlavors") {
+            id = "exoplayerapp.android.application.flavors"
+            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
+        }
+        register("jvmLibrary") {
+            id = "exoplayerapp.jvm.library"
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
+    }
+}
