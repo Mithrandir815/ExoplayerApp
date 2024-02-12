@@ -16,7 +16,7 @@ ksp = "1.9.0-1.0.12"
 gmsPlugin = "4.3.15"
 secrets = "2.0.1"
 protobufPlugin = "0.9.4"
-exoplayer = "2.19.0"
+exoplayer = "2.19.1"
 
 
 [libraries]
