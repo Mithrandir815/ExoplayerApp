@@ -2,7 +2,7 @@
 
 androidGradlePlugin = "8.2.2"
 compileSdk = "32"
-kotlin = "1.9.0"
+kotlin = "1.9.22"
 androidxCore = "1.10.1"
 lifecycle-runtime-ktx = "2.6.1"
 androidxActivity = "1.7.2"
